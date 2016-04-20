@@ -18,21 +18,26 @@ class NewStudent extends Component {
   }
 
   render() {
-    const { fields: { name, email } } = this.props;
+    const { fields: { name, email, instructor } } = this.props;
     return (
       <div className="row">
         <form className="col s12" onSubmit={this.onSubmit} >
           <div className="row">
-            <div className="input-field col s6">
+            <div class="divider"></div>
+            <div className="input-field col s6 offset-s3">
               <input type="text" className="validate form-control" {...name} />
               <label htmlFor="icon_prefix">Name</label>
             </div>
-            <div className="input-field col s6">
+            <div className="input-field col s6 offset-s3">
               <input type="text" className="validate form-control" {...email} />
               <label htmlFor="icon_telephone">Email</label>
             </div>
+            <div className="input-field col s6 offset-s3">
+              <input type="text" className="validate form-control" {...instructor} />
+              <label htmlFor="icon_prefix">Instructor</label>
+            </div>
           </div>
-          <button className="btn waves-effect waves-light" type="submit">
+          <button className="btn waves-effect waves-light col s6 offset-s3" type="submit">
             Submit
             <i className="fa fa-info fa-2x fa-spin right"></i>
           </button>
