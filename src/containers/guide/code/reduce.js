@@ -49,7 +49,7 @@ function strangeFunc(memo, item) {
   return undefined;
 }
 
-reduce(letters, notB); => undefined (current implementation would return 'a')
+reduce(letters, strangeFunc); => undefined (current implementation would return 'a')
 `
 
 export const reduceUndefinedSolution =
