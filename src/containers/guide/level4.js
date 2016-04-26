@@ -1,6 +1,7 @@
 import React from 'react';
 import Highlight from '../../helpers/highlight.js';
 import { map, mapExample, mapUsingReduce } from './code/map.js';
+import { reduceSolution, reduceUndefinedExample, reduceUndefinedSolution } from './code/reduce.js';
 import { filter, filterExample, filterUsingReduce } from './code/filter.js';
 
 export default () => (
