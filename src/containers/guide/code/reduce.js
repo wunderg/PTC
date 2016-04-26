@@ -39,3 +39,35 @@ function sum(memo, item) {
 
 reduce(numbers, sum); => 10;
 `;
+
+export const reduceUndefinedExample = 
+`//test array
+var letters = ['a', 'b', 'c', 'd'];
+
+//test function
+function strangeFunc(memo, item) {
+  return undefined;
+}
+
+reduce(letters, notB); => undefined (current implementation would return 'a')
+`
+
+export const reduceUndefinedSolution =
+`
+var reduce = function (collection, accumulator, startValue) {
+  var first = true;
+​
+  each(collection, function (item) {
+    if (first && startValue === undefined) {
+      startValue = item;
+      first = false;
+    } else {
+      startValue = accumulator(startValue, item);
+    }
+  });
+​
+  return startValue;
+}
+`
+
+

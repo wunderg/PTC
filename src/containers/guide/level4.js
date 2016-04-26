@@ -1,6 +1,7 @@
 import React from 'react';
 import Highlight from '../../helpers/highlight.js';
 import { map, mapExample, mapUsingReduce } from './code/map.js';
+import { reduceSolution, reduceUndefinedExample, reduceUndefinedSolution } from './code/reduce.js';
 import { filter, filterExample, filterUsingReduce } from './code/filter.js';
 
 export default () => (
@@ -88,6 +89,40 @@ export default () => (
             <div className="code">
               <h5><b>Solution:</b></h5>
               <Highlight props={filterUsingReduce} />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="card">
+            <div className="card-content">
+              <h4><b>Lesson 3 - Advanced Reduce</b></h4>
+              <hr />
+              <div className="">
+                <h5><b>Objectives:</b></h5>
+                <ul className="prompts">
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to determine when we are in the nth iteration of each</span></li>
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach that it is valid for a reduce accumulator to return undefined </span></li>
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to set a default start value for both objects and arrays</span></li>
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach that it is critical to think about edge cases when solving problems</span></li>
+
+                </ul>
+              </div>
+              <div className="">
+                <h5><b>Technical:</b></h5>
+              </div>
+              <ul className="prompts">
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Start with previous implementation of Reduce</span></li>
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Use a boolean flag (or similar method) to check that we are at the first iteration of each</span></li>
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Only set the startValue to the first element if we are in the first iteration and startValue is undefined</span></li>
+              </ul>
+            </div>
+            <div className="code">
+              <h5><b>Example</b></h5>
+              <Highlight props={reduceUndefinedExample} />
+            </div>
+            <div className="code">
+              <h5><b>Solution:</b></h5>
+              <Highlight props={reduceUndefinedSolution} />
             </div>
           </div>
         </li>
