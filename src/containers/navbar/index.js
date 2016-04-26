@@ -25,11 +25,11 @@ class Navbar extends Component {
             </a>
             <ul className="right hide-on-med-and-down">
               <li><Link to={'/login'}>Sign In</Link></li>
-              <li><Link to={'/signup'}>Sing Up</Link></li>
+              <li><Link to={'/signup'}>Sign Up</Link></li>
             </ul>
             <ul className="side-nav" id="mobile-demo">
               <li><Link to={'/login'}>Sign In</Link></li>
-              <li><Link to={'/signup'}>Sing Up</Link></li>
+              <li><Link to={'/signup'}>Sign Up</Link></li>
             </ul>
           </div>
         </nav>
