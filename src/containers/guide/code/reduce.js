@@ -6,7 +6,7 @@ export const reduceSolution =
 `function reduce(collection, accumulator, startValue) {
   each(collection, function(item) {
     if (startValue === undefined) {
-      startValue = collection[0];
+      startValue = item;
     }
     else {
       startValue = accumulator(startValue, item);
