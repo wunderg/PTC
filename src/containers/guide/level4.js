@@ -92,6 +92,38 @@ export default () => (
             </div>
           </div>
         </li>
+        <li>
+          <div className="card">
+            <div className="card-content">
+              <h4><b>Lesson 3 - Handle undefined with Reduce</b></h4>
+              <hr />
+              <div className="">
+                <h5><b>Objectives:</b></h5>
+                <ul className="prompts">
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to determine when we are in the nth iteration of each</span></li>
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach that it is valid for a reduce accumulator to return undefined </span></li>
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach that it is critical to think about edge cases when solving problems</span></li>
+                </ul>
+              </div>
+              <div className="">
+                <h5><b>Technical:</b></h5>
+              </div>
+              <ul className="prompts">
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Start with previous implementation of Reduce</span></li>
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Use a boolean flag (or similar method) to check that we are at the first iteration of each</span></li>
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Only set the startValue to the first element if we are in the first iteration and startValue is undefined</span></li>
+              </ul>
+            </div>
+            <div className="code">
+              <h5><b>Example</b></h5>
+              <Highlight props={reduceUndefinedExample} />
+            </div>
+            <div className="code">
+              <h5><b>Solution:</b></h5>
+              <Highlight props={reduceUndefinedSolution} />
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
