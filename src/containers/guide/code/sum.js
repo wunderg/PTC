@@ -16,7 +16,7 @@ export const sumSolution =
 `function sum(collection, startValue) {
   return reduce(collection, function(memo, item) {
     return memo + item;
-  });
+  }, startValue);
 }
 
 ***** Pseudo Code *****
