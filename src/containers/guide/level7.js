@@ -17,6 +17,7 @@ export default () => (
               <div className="">
                 <h5><b>Objectives:</b></h5>
                 <ul className="prompts">
+                  <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach student how to edit each to handle strings</span></li>
                   <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to write hashTable function</span></li>
                   <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to start Reduce with an object</span></li>
                   <li><i className="fa fa-check green-text text-lighten-2"></i><span> Teach how to check if property exists on the object</span></li>
@@ -29,6 +30,7 @@ export default () => (
                 <h5><b>Technical:</b></h5>
               </div>
               <ul className="prompts">
+                <li><i className="fa fa-check green-text text-lighten-2"></i><span> Update each so that it handles strings</span></li>
                 <li><i className="fa fa-check green-text text-lighten-2"></i><span> Create function HashTable</span></li>
                 <li><i className="fa fa-check green-text text-lighten-2"></i><span> HashTable should accept string as an argument</span></li>
                 <li><i className="fa fa-check green-text text-lighten-2"></i><span> HashTable should return an object</span></li>

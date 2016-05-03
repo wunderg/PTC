@@ -4,7 +4,19 @@ export const hash =
 }`;
 
 export const hashSolution =
-`function hash(str) {
+`function each(collection, callback) {
+  if (Array.isArray(collection) || typeof collection === 'string') {
+    for (var i = 0; i < collection.length ; i++) {
+      callback(collection[i]);
+    }
+  } else {
+    for (var prop in collection) {
+      callback(collection[prop]);
+    }
+  }
+}
+
+function hash(str) {
   return reduce(str, function(result, item), {
     if (!result[item]) {
       result[item] = 1;
@@ -14,6 +26,8 @@ export const hashSolution =
     return result;
   }, {});
 }
+
+
 
 ***** Pseudo Code *****
 // declare function hash
