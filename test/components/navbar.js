@@ -1,13 +1,13 @@
 import React from 'react';
 import { expect } from '../test_helper.js';
 import { shallow, mount, render } from 'enzyme';
-import App from '../../src/containers/navbar/index.js';
+import Navbar from '../../src/containers/navbar/index.js';
 
 describe('Navbar', () => {
 
-  it('shows main component ', () => {
-    console.log(global.window.localStorage);
-    const component = shallow(<App />);
+  it('shows navbar component ', () => {
+    const initialState = {user: {isAuthenticated: false}}
+    const component = shallow(<Navbar user={initialState} />);
     expect(component).to.exist;
   });
 });

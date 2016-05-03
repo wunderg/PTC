@@ -13,6 +13,7 @@ export class App extends Component {
   }
 
   componentWillMount() {
+    console.log(this.props);
     const token = window.localStorage.getItem('id_token');
     if (!this.props.user.isAuthenticated && token) {
       this.props.loginWithToken(token);

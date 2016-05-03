@@ -3,10 +3,13 @@ import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import { App } from '../../src/containers/app/index.js';
 
-describe('Navbar', () => {
+describe('Main App component', () => {
 
   it('shows main component ', () => {
-    const component = shallow(<App />);
+    const user = {
+        isAuthenticated: false
+    };
+    const component = shallow(<App user={user} />);
     expect(component).to.exist;
   });
 });

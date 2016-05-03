@@ -13,6 +13,7 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
+    console.log(this);
     if (this.props.user.isAuthenticated) {
       this.props.fetchStudents();
     }
