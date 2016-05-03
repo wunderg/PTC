@@ -7,7 +7,7 @@ import '../../../global.scss';
 
 import { loginWithToken, logout, fetchStudents } from '../../actions/login.js';
 
-class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
   }

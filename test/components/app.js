@@ -1,20 +1,12 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
-import App from '../../src/containers/app/index.js';
+import { App } from '../../src/containers/app/index.js';
 
-
-describe('App', () => {
+describe('Navbar', () => {
 
   it('shows main component ', () => {
-    const component = mount(<App />)
-    console.log(component);
-    {/* expect(component).to.have.class('main-wrap'); */}
+    const component = shallow(<App />);
+    expect(component).to.exist;
   });
-
-  xit('shows navbar component', () => {
-    const component = renderComponent(App, null, {});
-    expect(component.find('.nav-wrapper')).to.exist;
-  });
-  
 });
