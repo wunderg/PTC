@@ -7,7 +7,7 @@ describe('Navbar', () => {
 
   it('shows navbar component ', () => {
     const initialState = {user: {isAuthenticated: false}}
-    const component = shallow(<Navbar user={initialState} />);
+    const component = shallow(<Navbar props={initialState} />);
     expect(component).to.exist;
   });
 });

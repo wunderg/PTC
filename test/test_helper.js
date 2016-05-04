@@ -1,10 +1,10 @@
 import { expect } from 'chai';
+import jquery from 'jquery';
+import jsdom from 'jsdom';
 
-var jsdom = require('jsdom').jsdom;
+const exposedProperties = ['window', 'navigator', 'document'];
 
-var exposedProperties = ['window', 'navigator', 'document'];
-
-global.document = jsdom('');
+global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = document.defaultView;
 Object.keys(document.defaultView).forEach((property) => {
   if (typeof global[property] === 'undefined') {
@@ -13,10 +13,15 @@ Object.keys(document.defaultView).forEach((property) => {
   }
 });
 
+const $ = jquery(global.window);
+$.sideNav = function () {};
+global.window.$ = $;
+global.$ = $;
+global.window.ENV_TEST = true;
+
 global.navigator = {
   userAgent: 'node.js'
 };
-
 
 const createStorage = () => {
   const store = {};
