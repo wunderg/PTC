@@ -26,6 +26,7 @@ global.navigator = {
 const createStorage = () => {
   const store = {};
   store.getItem = item => store[item];
+  store.setItem = (item, value) => store[item] = value;
   return store;
 };
 
