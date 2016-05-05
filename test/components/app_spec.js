@@ -1,14 +1,23 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import { App } from '../../src/containers/app/index.js';
 import Spinner from '../../src/helpers/spinner.js';
 
 describe('Main App component ', () => {
-  describe('Render Main Component when user NOT loggin in', () => {
-    let user;
-    let wrapper;
+  let user;
+  let wrapper;
 
+  it('show spinner while fetching', () => {
+    user = {
+      isFetching: true
+    };
+    wrapper = shallow(<App user={user} />);
+    expect(wrapper.find(Spinner)).to.have.length(1);
+  });
+
+  describe('Render when user NOT loggin in', () => {
     beforeEach(() => {
       user = {
         isAuthenticated: false
@@ -24,15 +33,12 @@ describe('Main App component ', () => {
       expect(wrapper.is('#main')).to.equal(true);
     });
 
-    it('have have a container ', () => {
+    it('have to have a container ', () => {
       expect(wrapper.find('.container').hasClass('container')).to.equal(true);
     });
   });
 
-  describe('Render Main Component when user IS loggin in', () => {
-    let user;
-    let wrapper;
-
+  describe('Render when user IS loggin in', () => {
     beforeEach(() => {
       user = {
         isAuthenticated: true
@@ -48,16 +54,39 @@ describe('Main App component ', () => {
       expect(wrapper.is('#main')).to.equal(true);
     });
 
-    it('have have a container ', () => {
+    it('have to have a container ', () => {
       expect(wrapper.find('.container').hasClass('container')).to.equal(true);
     });
+  });
 
-    it('shows spinner while fetching', () => {
+  describe('validate user', () => {
+    let validate;
+    beforeEach(() => {
       user = {
-        isFetching: true
+        isAuthenticated: false
       };
-      wrapper = shallow(<App user={user} />);
-      expect(wrapper.find(Spinner)).to.have.length(1);
+      global.window.localStorage.clean();
+      validate = sinon.spy();
+      wrapper = shallow(<App user={user} loginWithToken={validate} />);
+    });
+
+    it('should not validate if user is authenticated', () => {
+      user = {
+        isAuthenticated: true
+      };
+      global.window.localStorage.setItem('id_token', 123456789);
+      wrapper = shallow(<App user={user} loginWithToken={validate} />);
+      expect(validate.called).to.equal(false);
+    });
+
+    it('should validate if token exist', () => {
+      global.window.localStorage.setItem('id_token', 123456789);
+      wrapper = shallow(<App user={user} loginWithToken={validate} />);
+      expect(validate.called).to.equal(true);
+    });
+
+    it('should not validate if token doesnt exist', () => {
+      expect(validate.called).to.equal(false);
     });
   });
 });

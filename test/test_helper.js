@@ -24,9 +24,10 @@ global.navigator = {
 };
 
 const createStorage = () => {
-  const store = {};
+  let store = {};
   store.getItem = item => store[item];
   store.setItem = (item, value) => store[item] = value;
+  store.clean = () => store = {};
   return store;
 };
 
