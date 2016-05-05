@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchStudents } from '../../actions';
+import { fetchStudents, selectStudent } from '../../actions';
 
 import TextInput from '../text-input';
 import Students from '../students';
@@ -13,7 +13,6 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    console.log(this);
     if (this.props.user.isAuthenticated) {
       this.props.fetchStudents();
     }
@@ -30,7 +29,7 @@ class Dashboard extends Component {
           <TextInput />
         </div>
         <div className="col s12">
-          <Students data={ this.props.data } />
+          <Students data={ this.props.data } selectStudent={this.props.selectStudent} />
         </div>
       </div>
     );
@@ -49,13 +48,14 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchStudents }, dispatch);
+  return bindActionCreators({ fetchStudents, selectStudent }, dispatch);
 }
 
 Dashboard.propTypes = {
   data: PropTypes.object,
   fetchStudents: PropTypes.func,
-  history: PropTypes.object
+  history: PropTypes.object,
+  selectStudent: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

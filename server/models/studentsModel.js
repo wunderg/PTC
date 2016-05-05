@@ -25,6 +25,10 @@ const studentsSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  contacted: {
+    type: Boolean,
+    required: true
+  },
   sessions: {
     type: Object,
     default: {1: 'here is going to be code from first session', 2: 'and here are code from second'}

@@ -3,6 +3,7 @@ import Info from './info';
 import Notes from './notes';
 import Sessions from './sessions';
 import Ratings from './ratings';
+import { connect } from 'react-redux'
 import './style.scss';
 
 class Student extends Component {
@@ -14,11 +15,11 @@ class Student extends Component {
       });
     });
   }
-
+  
   render() {
     return (
       <div className="row">
-        <Info />
+        <Info data={this.props.student}/>
         <Ratings />
         <Sessions />
         <Notes />
@@ -26,4 +27,11 @@ class Student extends Component {
     );
   }
 }
-export default Student;
+
+function mapStateToProps(state) {
+  return {
+    student: state.slocal.selectedStudent
+  }
+}
+
+export default connect(mapStateToProps)(Student);

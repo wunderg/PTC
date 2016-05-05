@@ -10,6 +10,8 @@ export default (state = { isFetching: true, students: [] }, action) => {
       return {...state, isFetching: false, students: action.data.data}
     case ACTIONS.FETCH_STUDENTS_FAILURE:
       return {...state, isFetching: false, message: action.data.message}
+    case ACTIONS.SELECT_STUDENT:
+      return {...state, selectedStudent: action.payload}
     default:
       return state;
   }
