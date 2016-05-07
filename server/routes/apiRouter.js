@@ -27,7 +27,7 @@ module.exports = (app, express) => {
   apiRouter.post('/signup', UserController.signup);
   apiRouter.get('/tokenlogin', requireAuth, UserController.tokenLogin);
   apiRouter.get('/students', requireAuth, StudentController.get);
-  apiRouter.put('/students', requireAuth, StudentController.put);
+  apiRouter.put('/student', requireAuth, StudentController.put);
   apiRouter.post('/student', StudentController.post);
   apiRouter.delete('/student/:id', StudentController.delete);
 };

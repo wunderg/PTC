@@ -5,7 +5,12 @@ import './style.scss';
 const Table = (props) => (
   <div className="student-list">
     {props.data.students.map(student =>
-      <Card student={student} selectStudent={props.selectStudent} key={student.name} />
+      <Card
+        student={student}
+        selectStudent={props.selectStudent}
+        key={student.name}
+        updateStudent={props.updateStudent}
+      />
     )}
   </div>
 );
@@ -13,7 +18,8 @@ const Table = (props) => (
 Table.propTypes = {
   data: PropTypes.object,
   students: PropTypes.array,
-  selectStudent: PropTypes.func
+  selectStudent: PropTypes.func,
+  updateStudent: PropTypes.func
 };
 
 export default Table;

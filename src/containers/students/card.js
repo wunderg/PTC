@@ -8,18 +8,14 @@ export default ({ student, selectStudent, updateStudent }) => {
   const message = `mailto:student@email.com?subject=Coaching By Hack Reactor&body=Hello
   -Student Name Here -,%0D%0A%0D%0A Welcome to your Personal Coaching .%0D%0A%0D%0A
   Here will body of the email where we can put whatever we like`;
-  console.log("selectStudent", selectStudent)
-  console.log("updateStudent", updateStudent)
+
   const onDetailsClick = () => {
     selectStudent(student);
     browserHistory.push('/student');
   };
 
   const onCheckBoxClick = () => {
-    if (student.contacted === '') {
-      student.contacted = 'checked';
-    }
-    student.contacted = ''
+    student.contacted = student.contacted === '' ? 'checked' : ''
     updateStudent(student);
   };
 

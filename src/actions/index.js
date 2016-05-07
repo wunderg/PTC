@@ -31,7 +31,13 @@ export function selectStudent(student) {
 }
 
 export function updateStudent(student) {
-  axios.put(`api/student`, student);
+  const token = localStorage.getItem('id_token') || null;
+
+  const config = {
+    headers: { Authorization: token }
+  };
+
+  axios.put(`api/student`, student, config);
   return {
     type: ACTIONS.UPDATE_STUDENT,
     payload: student

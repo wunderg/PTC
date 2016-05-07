@@ -5,7 +5,7 @@ export default (state = { isFetching: true, students: [] }, action) => {
     case ACTIONS.ADD_STUDENT:
       return {...state, students: state.students.concat(action.payload)};
     case ACTIONS.UPDATE_STUDENT:
-      return {...state, students: action.payload};
+      return {...state, temp: action.payload};
     case ACTIONS.FETCH_STUDENTS_REQUEST:
       return {...state, isFetching: true}
     case ACTIONS.FETCH_STUDENTS_SUCCESS:

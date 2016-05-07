@@ -28,19 +28,9 @@ export default {
   },
 
   put(req, res) {
-    const { _id, name, email, lesson, level, interview, decision, contacted } = req.body;
+    const { _id } = req.body;
 
-    new Student({
-      _id,
-      name,
-      email,
-      lesson,
-      level,
-      interview,
-      decision,
-      contacted
-    })
-    .save()
+    Student.findByIdAndUpdate(_id, req.body)
     .then(result => res.json(result))
     .catch(err => res.json(err));
   },
