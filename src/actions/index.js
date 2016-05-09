@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as ACTIONS from './constants';
+import moment from 'moment';
 
 export function addStudent(student) {
   const nextId = Math.floor(Math.random() * 100);
@@ -7,7 +8,7 @@ export function addStudent(student) {
     _id: nextId,
     lesson: 0,
     level: 0,
-    interview: 'not set',
+    interview: moment(new Date()).format('YYYY/MM/DD'),
     decision: 'pending',
     contacted: '',
     name: student.name,

@@ -27,10 +27,10 @@ class Student extends Component {
   render() {
     return (
       <div className="row">
-        <Info data={this.props.student}/>
+        <Info updateStudent={updateStudent} data={this.props.student}/>
         <Ratings updateStudent={this.props.updateStudent} data={this.props.student} />
-        <Sessions updateStudent={this.props.updateStudent} data={this.props.student} />
         <Notes updateStudent={this.props.updateStudent} data={this.props.student} />
+        <Sessions updateStudent={this.props.updateStudent} data={this.props.student} />
       </div>
     );
   }
