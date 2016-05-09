@@ -27,7 +27,7 @@ class Student extends Component {
   render() {
     return (
       <div className="row">
-        <Info updateStudent={updateStudent} data={this.props.student}/>
+        <Info updateStudent={this.props.updateStudent} data={this.props.student}/>
         <Ratings updateStudent={this.props.updateStudent} data={this.props.student} />
         <Notes updateStudent={this.props.updateStudent} data={this.props.student} />
         <Sessions updateStudent={this.props.updateStudent} data={this.props.student} />

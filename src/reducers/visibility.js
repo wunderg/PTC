@@ -5,11 +5,11 @@ export const filterVisibility = (students, filter) => {
     case 'Not-Assigned':
       return students.filter(item => !item.instructor);
     case 'In-Progress':
-      return students.filter(item => item.decision === 'pending');
+      return students.filter(item => item.decision === 'Pending');
     case 'Not-Contacted':
       return students.filter(item => item.contacted === '');
     case 'Accepted':
-      return students.filter(item => item.decision !== 'pending');
+      return students.filter(item => item.decision !== 'Pending');
     default:
       return students;
   }

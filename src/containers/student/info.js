@@ -5,6 +5,7 @@ export default (props) => {
   const onDateClick = () => {
     $('.datepicker').pickadate({
       selectMonths: true,
+      closeOnSelect: true,
       selectYears: 15
     });
 
@@ -32,11 +33,13 @@ export default (props) => {
           <span> {props.data.lesson} of 8</span>
         </section>
         <section className="info"><span>Level:</span><span> {props.data.level} of 5</span></section>
+        <section className="info"><span>Instructor:</span><span> {props.data.instructor} </span></section>
+        <section className="info"><span>Contacted:</span><span> {props.data.contacted} </span></section>
         <section className="info"><span>Interview:</span>
           <span><input type="text" className="datepicker" value={props.data.interview} onClick={onDateClick} /></span>
         </section>
         <section className="info"><span>Decision:</span>
-          <span>
+          <span className="decision">
             <Input type="select" onChange={onDecisionClick}>
               <option>{props.data.decision}</option>
               <option>Pending</option>
