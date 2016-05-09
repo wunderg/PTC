@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from 'react-materialize';
 
 export default (props) => {
   const onDateClick = () => {
@@ -12,6 +13,12 @@ export default (props) => {
       student.interview = e.target.value;
       props.updateStudent(student);
     });
+  };
+
+  const onDecisionClick = (e) => {
+    const student = props.data;
+    student.decision = e.target.value;
+    props.updateStudent(student);
   };
 
   return (
@@ -28,7 +35,16 @@ export default (props) => {
         <section className="info"><span>Interview:</span>
           <span><input type="text" className="datepicker" value={props.data.interview} onClick={onDateClick} /></span>
         </section>
-        <section className="info"><span>Decision:</span><span> {props.data.decision} </span></section>
+        <section className="info"><span>Decision:</span>
+          <span>
+            <Input type="select" onChange={onDecisionClick}>
+              <option>{props.data.decision}</option>
+              <option>Pending</option>
+              <option>Accepted</option>
+              <option>Denied</option>
+            </Input>
+          </span>
+        </section>
         <section className="info"><span>Contacted:</span><span> {props.data.contacted} </span></section>
       </div>
     </div>
