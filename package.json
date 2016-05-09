@@ -54,6 +54,7 @@
     "jwt-simple": "^0.5.0",
     "material-ui": "^0.14.4",
     "materialize-css": "^0.97.5",
+    "moment": "^2.13.0",
     "mongoose": "^4.4.5",
     "node-sass": "^3.6.0",
     "passport": "^0.3.2",
