@@ -7,7 +7,7 @@ export const eachModifiedIndex =
 `function each(collection, callback) {
   if (Array.isArray(collection) || typeof collection === 'string') {
     for (var i = 0; i < collection.length ; i++) {
-      callback(collection[i], I, collection);
+      callback(collection[i], i, collection);
     }
   } else {
     for (var prop in collection) {

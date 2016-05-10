@@ -10,19 +10,19 @@ export default () => (
       <div className="card">
         <div className="card-content">
           <div className="code">
-            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create an array with null, string, and a number</span></h5>
+            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create an array with Object that has your name, string of your name, and the number 5</span></h5>
             <Highlight props={array} />
           </div>
           <div className="code">
-            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create function multiply that multiples number by 2</span></h5>
+            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create function multiply that multiples a number by 2</span></h5>
             <Highlight props={multiply} />
           </div>
           <div className="code">
-            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Use multiply to multyply third value in array above</span></h5>
+            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Use multiply func to multiply third value in array above</span></h5>
             <Highlight props={useMult} />
           </div>
           <div className="code">
-            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create each function that can work on objects, arrays and string</span></h5>
+            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create each function that can work on objects, arrays and strings</span></h5>
             <Highlight props={each} />
           </div>
           <div className="code">
@@ -42,7 +42,7 @@ export default () => (
             <Highlight props={filterUsingReduce} />
           </div>
           <div className="code">
-            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create numberOfWins funciton using reduce</span></h5>
+            <h5><i className="fa fa-check green-text text-lighten-2"></i><span> Create numberOfWins function using reduce</span></h5>
             <Highlight props={numberOfWins} />
           </div>
           <div className="code">

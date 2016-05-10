@@ -10,13 +10,6 @@ import mongoose from 'mongoose';
 import appRouter from './routes/appRouter';
 import apiRouter from './routes/apiRouter';
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect('process.env.MONGODB_URI');
-} else {
-  const mongo = require('../secrets.js').mongo;
-  mongoose.connect(mongo);
-}
-
 const isProduction = process.env.NODE_ENV === 'production';
 const isDeveloping = !isProduction;
 const port = isProduction ? (process.env.PORT || 80) : 3000;
@@ -24,6 +17,9 @@ const port = isProduction ? (process.env.PORT || 80) : 3000;
 const app = express();
 
 const staticPath = path.join(__dirname, '../');
+
+const mongoDB = process.env.MONGODB_URI || require('../secrets.js').mongo;
+mongoose.connect(mongoDB);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
