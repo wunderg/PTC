@@ -4,12 +4,18 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import bodyParser from 'body-parser';
 import webpackConfig from '../webpack-config.js';
+
 import mongoose from 'mongoose';
 
 import appRouter from './routes/appRouter';
 import apiRouter from './routes/apiRouter';
 
-mongoose.connect('mongodb://heroku_hlts8n62:39jnujkhmu3n68fr7a146pfp40@ds019068.mlab.com:19068/heroku_hlts8n62');
+if (process.env.MONGODB_URI) {
+  mongoose.connect('process.env.MONGODB_URI');
+} else {
+  const mongo = require('../secrets.js').mongo;
+  mongoose.connect(mongo);
+}
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDeveloping = !isProduction;

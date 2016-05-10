@@ -30,11 +30,11 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: 'secret_goes_here'
+  secretOrKey: process.env.SECRET || require('../../secrets.js').jwt
 };
 
 const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
-  console.log(payload.sub,'payloadSUB');
+  console.log(payload.sub, 'payloadSUB');
   User.findOne({ email: payload.sub }, (err, user) => {
     if (err) {
       return done(err, false);
