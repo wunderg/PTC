@@ -2,8 +2,9 @@ import User from '../../models/userModel.js';
 import jwt from 'jwt-simple';
 
 const token = (user) => {
+  const secret = process.env.SECRET || require('../../../secrets.js').jwt;
   const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.email, iat: timestamp }, 'secret_goes_here');
+  return jwt.encode({ sub: user.email, iat: timestamp }, secret);
 };
 
 export default {
