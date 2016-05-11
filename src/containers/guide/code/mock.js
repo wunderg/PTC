@@ -5,7 +5,7 @@ export const multiply =
   return num * 2;
 }`;
 
-export const useMult = `multiply(array[2]); => 10`;
+export const useMult = `multiply(array[2]); // => 10`;
 
 export const each =
 `function each(collection, callback){
@@ -26,7 +26,7 @@ export const map = `function map(collection, callback) {
 }`;
 
 export const filterUsingReduce =
-  `//copy and paste code below for student to debug
+  `// copy and paste code below for student to debug
 function = filter(collection predicate())
   var reduce(collection, predicate(item) {
     if(!item)
@@ -38,9 +38,9 @@ function = filter(collection predicate())
 
 export const numberOfWins =
   `//example
-numbersOfWins('LWLWLWWWLLWW')  => {L: 5, W: 8};
+numbersOfWins('LWLWLWWWLLWW')  // => {L: 5, W: 8};
 
-funciton numberOfWins(str) {
+function numberOfWins(str) {
   //your code here
 }
 `;
@@ -53,4 +53,12 @@ function defaults(object1, object2){
 var iceCream = {flavor: "chocolate"};
 _.defaults(iceCream, {flavor: "vanilla", sprinkles: "lots"});
 => {flavor: "chocolate", sprinkles: "lots"}
+
+// Solution //
+function defaults(object1, object2){
+  return _.reduce(object2, function(result, v, k) {
+    result[k] = object1[k] || object2[k]
+    return result
+  }, {})
+}
 `;
