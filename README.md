@@ -30,7 +30,7 @@ This will handle both client and server-side dependencies as outlined in [packag
 
 after installation has completed
 ```sh
-npm run start-dev
+npm start
 ```
 
 then navigate to `localhost:3001/`
@@ -51,6 +51,7 @@ On any project there are many internal APIs. For ease of reference, for both the
 
 ```sh
 npm test
+npm test:watch
 ```
 
 TODO//
