@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/wunderg/PTC.svg?branch=master)](https://travis-ci.org/wunderg/PTC)
+[![Build Status](https://travis-ci.org/wunderg/PTC.svg?branch=master)](https://travis-ci.org/wunderg/TrackingJS.svg?branch=master)
 
-# PTC Portal
+# TrackingJS
 
 ## Table of Contents
 
